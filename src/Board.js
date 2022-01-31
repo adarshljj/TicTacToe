@@ -52,6 +52,7 @@ export const Board = ({ currentPlayer, setCurrentPlayer }) => {
       winCases.forEach((e) => {
         if (e.every((l) => array.includes(l))) {
           setWinner(index === 0 ? Players.PlayerOne : Players.PlayerTwo);
+          return;
         }
       });
     });
