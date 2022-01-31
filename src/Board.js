@@ -48,10 +48,6 @@ export const Board = ({ currentPlayer, setCurrentPlayer }) => {
         }
       });
     });
-    if (XArray.length + OArray.length === 9) {
-      setWinner("T");
-      return;
-    }
     BothArray.forEach((array, index) => {
       winCases.forEach((e) => {
         if (e.every((l) => array.includes(l))) {
@@ -59,6 +55,10 @@ export const Board = ({ currentPlayer, setCurrentPlayer }) => {
         }
       });
     });
+    if (XArray.length + OArray.length === 9) {
+      setWinner("T");
+      return;
+    }
   };
 
   const resetScore = () => {
