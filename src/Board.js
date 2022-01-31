@@ -28,11 +28,10 @@ export const Board = ({ currentPlayer, setCurrentPlayer }) => {
   const handleOnClick = (e) => {
     let i = Math.floor(e.target.value / 3);
     let j = Math.floor(e.target.value % 3);
-    if (currentPlayer === Players.PlayerOne) {
-      setCurrentPlayer(Players.PlayerTwo);
-    } else {
-      setCurrentPlayer(Players.PlayerOne);
-    }
+    currentPlayer === Players.PlayerOne
+      ? setCurrentPlayer(Players.PlayerTwo)
+      : setCurrentPlayer(Players.PlayerOne);
+
     let tempBoard = board;
     tempBoard[i][j] = currentPlayer;
     setBoard(tempBoard);
